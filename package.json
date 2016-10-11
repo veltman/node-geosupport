@@ -1,0 +1,33 @@
+{
+  "name": "geoclient",
+  "version": "1.0.0",
+  "description": "Node.js wrapper for fast geocoding with NYC's Geosupport system",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veltman/node-geoclient.git"
+  },
+  "keywords": [
+    "geocoding",
+    "geocoder",
+    "nyc",
+    "new york city",
+    "geoclient",
+    "geosupport"
+  ],
+  "author": "Noah Veltman (@veltman), Chris Whong (@chris_whong)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/veltman/node-geoclient/issues"
+  },
+  "homepage": "https://github.com/veltman/node-geoclient#readme",
+  "devDependencies": {
+    "tape": "^4.6.2"
+  },
+  "dependencies": {
+    "ffi": "^2.1.0"
+  }
+}
