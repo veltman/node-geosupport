@@ -14,6 +14,8 @@ module.exports = function(functionCode, params, allowedFields) {
     }
   });
 
+  // TODO add "C" working area format indicator and function code itself
+
   return [wa1, wa2];
 
 };
