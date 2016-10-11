@@ -3,7 +3,7 @@ var ffi = require("ffi"),
     parseWorkingAreas = require("./src/parse.js");
 
 function Geoclient(libPath) {
-  this.geocode = ffi.Library("version-16c_16.3/lib/libgeo.so", {
+  this.geocode = ffi.Library(libPath, {
     geo: [ "void", [ "char *", "char *" ] ]
   }).geo;
 }
