@@ -47,9 +47,9 @@ TK, if this is possible w/ Linux libs
 In order to use the module, you must supply the path to `libgeo.so` (Linux) or `libgeo.dll` (Windows) when creating a new geocoder. It can be an absolute path or relative to the working directory.
 
 ```js
-var Geosupport = require("geosupport");
+var Geoclient = require("geoclient");
 
-var geocoder = new Geosupport("version-16c_16.3/lib/libgeo.so");
+var geocoder = new Geoclient("version-16c_16.3/lib/libgeo.so");
 ```
 
 ## API
