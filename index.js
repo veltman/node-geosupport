@@ -27,8 +27,13 @@ function geocodeFn(functionCode, allowedFields) {
 
   return function(params) {
 
-    var extended = extend(params, { functionCode: functionCode }),
-        workingAreas = formatWorkingAreas(extended, allowedFields, spec.wa1, spec.wa2[functionCode]);
+    var workingAreas = formatWorkingAreas(params, allowedFields, spec.wa1, spec.wa2[functionCode]);
+
+    // WA1 function code
+    workingAreas[0].write(functionCode);
+
+    // WA1 format indicator (COW)
+    workingAreas[0].write("C", 212);
 
     this.geocode(workingAreas[0], workingAreas[1]);
 

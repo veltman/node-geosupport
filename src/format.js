@@ -34,12 +34,6 @@ module.exports = function(params, allowedFields, spec1, spec2) {
 
   });
 
-  // Function code in position zero
-  buf.write(functionCode);
-
-  // Working area format indicator
-  buf.write("C", 212);
-
   return [wa1, wa2];
 
 };
