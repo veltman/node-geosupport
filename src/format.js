@@ -1,18 +1,18 @@
 var boroughCodes = {
-      "MANHATTAN": "1",
-      "NEW YORK": "1",
-      "BRONX": "2",
-      "BROOKLYN": "3",
-      "KINGS": "3",
-      "QUEENS": "4",
-      "STATEN ISLAND": "5",
-      "RICHMOND": "5"
-    };
+  "MANHATTAN": "1",
+  "NEW YORK": "1",
+  "BRONX": "2",
+  "BROOKLYN": "3",
+  "KINGS": "3",
+  "QUEENS": "4",
+  "STATEN ISLAND": "5",
+  "RICHMOND": "5"
+};
 
-module.exports = function(params, allowedFields, functionCode, spec) {
+module.exports = function(params, allowedFields, spec1, spec2) {
 
-  var wa1 = new Buffer(spec.wa1.length),
-      wa2 = new Buffer(spec.wa2.length);
+  var wa1 = new Buffer(spec1.length),
+      wa2 = new Buffer(spec2.length);
 
   wa1.fill(" ");
   wa2.fill(" ");
@@ -22,7 +22,7 @@ module.exports = function(params, allowedFields, functionCode, spec) {
     if (!params[field]) return;
 
     var val = params[field].toUpperCase(),
-        fieldSpec = spec.wa1.fields[field];
+        fieldSpec = spec1.fields[field];
 
     if (field === "borough") {
       val = boroughCodes[val] || "";

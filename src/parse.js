@@ -1,21 +1,18 @@
-module.exports = function(workingAreas, functionCode, spec) {
+module.exports = function(wa1, wa2, spec1, spec2) {
 
-  var output = {};
+  return addFields(wa2, spec2, addFields(wa1, spec1, {}));
 
-  workingAreas.forEach(function(buf, i){
+};
 
-    var waSpec = i ? spec.wa2 : spec.wa1,
-        str = buf.toString();
+function addFields(wa, spec, output) {
 
-    for (var key in waSpec.fields) {
-      output[key] = str.substring(waSpec.fields[key].start - 1, waSpec.fields[key].end).trim();
-      if (output[key] && waSpec.fields.numeric) {
-        output[key] = +output[key];
-      }
+  for (var key in spec.fields) {
+    output[key] = wa.substring(spec.fields[key].start - 1, spec.fields[key].end).trim();
+    if (output[key] && spec.fields[key].numeric) {
+      output[key] = +output[key];
     }
-
-  });
+  }
 
   return output;
 
-};
+}

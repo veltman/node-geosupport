@@ -27,12 +27,27 @@ function geocodeFn(functionCode, allowedFields) {
 
   return function(params) {
 
-    var workingAreas = formatWorkingAreas(params, allowedFields, functionCode, spec[functionCode]);
+    var extended = extend(params, { functionCode: functionCode }),
+        workingAreas = formatWorkingAreas(extended, allowedFields, spec.wa1, spec.wa2[functionCode]);
 
     this.geocode(workingAreas[0], workingAreas[1]);
 
-    return parseWorkingAreas(workingAreas, functionCode, spec[functionCode]);
+    return parseWorkingAreas(workingAreas[0].toString(), workingAreas[1].toString(), spec.wa1, spec.wa2[functionCode]);
 
   };
+
+}
+
+function extend() {
+
+  var obj = Object(arguments[0]);
+
+  for (var i = 1; i < arguments.length; i++) {
+    for (var key in arguments[i]) {
+      obj[key] = arguments[i][key];
+    }
+  }
+
+  return obj;
 
 }
