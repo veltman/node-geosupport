@@ -31,7 +31,7 @@ function geocodeFn(functionCode, allowedFields) {
 
     this.geocode(workingAreas[0], workingAreas[1]);
 
-    return parseWorkingAreas(workingAreas[0].toString(), workingAreas[1].toString(), functionCode, spec[functionCode]);
+    return parseWorkingAreas(workingAreas, functionCode, spec[functionCode]);
 
   };
 
