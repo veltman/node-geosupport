@@ -1,20 +1,44 @@
-var spec = require("./spec.js");
+var boroughCodes = {
+      "MANHATTAN": "1",
+      "NEW YORK": "1",
+      "BRONX": "2",
+      "BROOKLYN": "3",
+      "KINGS": "3",
+      "QUEENS": "4",
+      "STATEN ISLAND": "5",
+      "RICHMOND": "5"
+    };
 
-module.exports = function(functionCode, params, allowedFields) {
+module.exports = function(params, allowedFields, functionCode, spec) {
 
-  var wa1 = new Buffer(1200),
-      wa2 = new Buffer(spec.wa2.lengths[functionCode]);
+  var wa1 = new Buffer(spec.wa1.length),
+      wa2 = new Buffer(spec.wa2.length);
 
   wa1.fill(" ");
   wa2.fill(" ");
 
   allowedFields.forEach(function(field){
-    if (params[field]) {
-      // TODO write params[field] to buffer based on spec.wa1.fields[field]
+
+    if (!params[field]) return;
+
+    var val = params[field].toUpperCase(),
+        fieldSpec = spec.wa1.fields[field];
+
+    if (field === "borough") {
+      val = boroughCodes[val] || "";
     }
+
+    if (val) {
+      buf.write(val.substring(0, fieldSpec.end - fieldSpec.start + 1), fieldSpec.start - 1);
+    }
+
   });
 
-  // TODO add "C" working area format indicator and function code itself
+  // Function code in position zero
+  buf.write(functionCode);
+
+  // Working area format indicator
+  buf.write("C", 212);
 
   return [wa1, wa2];
 

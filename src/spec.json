@@ -1,0 +1,52 @@
+{
+  "2": {
+    "wa1": {
+      "length": 1200,
+      "fields": {}
+    },
+    "wa2": {
+      "length": 200,
+      "fields": {}
+    }
+  },
+  "3": {
+    "wa1": {
+      "length": 1200,
+      "fields": {}
+    },
+    "wa2": {
+      "length": 450,
+      "fields": {}
+    }
+  },
+  "1B": {
+    "wa1": {
+      "length": 1200,
+      "fields": {}
+    },
+    "wa2": {
+      "length": 4300,
+      "fields": {}
+    }
+  },
+  "BL": {
+    "wa1": {
+      "length": 1200,
+      "fields": {}
+    },
+    "wa2": {
+      "length": 1363,
+      "fields": {}
+    }
+  },
+  "BN": {
+    "wa1": {
+      "length": 1200,
+      "fields": {}
+    },
+    "wa2": {
+      "length": 1363,
+      "fields": {}
+    }
+  }
+}

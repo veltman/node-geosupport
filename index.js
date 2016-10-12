@@ -1,4 +1,5 @@
 var ffi = require("ffi"),
+    spec = require("./src/spec.json"),
     formatWorkingAreas = require("./src/format.js"),
     parseWorkingAreas = require("./src/parse.js");
 
@@ -26,11 +27,11 @@ function geocodeFn(functionCode, allowedFields) {
 
   return function(params) {
 
-    var workingAreas = formatWorkingAreas(functionCode, params, allowedFields);
+    var workingAreas = formatWorkingAreas(params, allowedFields, functionCode, spec[functionCode]);
 
     this.geocode(workingAreas[0], workingAreas[1]);
 
-    return parseWorkingAreas(workingAreas[0].toString(), workingAreas[1].toString());
+    return parseWorkingAreas(workingAreas[0].toString(), workingAreas[1].toString(), functionCode, spec[functionCode]);
 
   };
 
