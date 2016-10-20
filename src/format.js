@@ -1,3 +1,7 @@
+//format.js
+//assembles work area buffers from passed-in params
+//based on list of allowed fields for a given geosupport function
+
 var boroughCodes = {
   "MANHATTAN": "1",
   "NEW YORK": "1",
@@ -10,6 +14,8 @@ var boroughCodes = {
 };
 
 module.exports = function(params, allowedFields, spec1, spec2) {
+
+console.log(params, allowedFields, spec1, spec2)
 
   var wa1 = new Buffer(spec1.length),
       wa2 = new Buffer(spec2.length);
@@ -29,7 +35,7 @@ module.exports = function(params, allowedFields, spec1, spec2) {
     }
 
     if (val) {
-      buf.write(val.substring(0, fieldSpec.end - fieldSpec.start + 1), fieldSpec.start - 1);
+      wa1.write(val.substring(0, fieldSpec.end - fieldSpec.start + 1), fieldSpec.start - 1);
     }
 
   });
