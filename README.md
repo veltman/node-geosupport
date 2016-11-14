@@ -1,4 +1,4 @@
-** Note: this is a skeleton for a future library, it doesn't work yet! In the meantime, consult [this Gist](https://gist.github.com/veltman/2c79458b2226466920dbd601bf94551f)**
+**Note: this is a skeleton for a future library, it doesn't work yet! In the meantime, consult [this Gist](https://gist.github.com/veltman/2c79458b2226466920dbd601bf94551f)**
 
 # Geoclient
 
