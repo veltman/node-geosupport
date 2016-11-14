@@ -1,6 +1,8 @@
+** Note: this is a skeleton for a future library, it doesn't work yet! In the meantime, consult [this Gist](https://gist.github.com/veltman/2c79458b2226466920dbd601bf94551f)**
+
 # Geoclient
 
-Node.js wrapper for fast geocoding with NYC's [Geosupport system]().
+Future Node.js wrapper for fast geocoding with NYC's [Geosupport system](https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-gde-home.page).
 
 If you are comfortable with Java, you may be better off installing [the official Java servlet Geoclient](https://github.com/CityOfNewYork/geoclient).
 
