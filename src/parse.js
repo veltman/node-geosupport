@@ -1,7 +1,10 @@
+//parse.js
+//parses work area buffers based on spec.js, 
+//builds an object will all properties included in the spec
+
+
 module.exports = function(wa1, wa2, spec1, spec2) {
-
   return addFields(wa2, spec2, addFields(wa1, spec1, {}));
-
 };
 
 function addFields(wa, spec, output) {

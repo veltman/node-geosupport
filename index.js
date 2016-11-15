@@ -4,6 +4,7 @@ var ffi = require("ffi"),
     parseWorkingAreas = require("./src/parse.js");
 
 function Geoclient(libPath) {
+  console.log('LIBPATH')
   this.geocode = ffi.Library(libPath, {
     geo: [ "void", [ "char *", "char *" ] ]
   }).geo;
