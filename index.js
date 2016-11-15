@@ -3,25 +3,25 @@ var ffi = require("ffi"),
     formatWorkingAreas = require("./src/format.js"),
     parseWorkingAreas = require("./src/parse.js");
 
-function Geoclient(libPath) {
+function Geosupport(libPath) {
   this.geocode = ffi.Library(libPath, {
     geo: [ "void", [ "char *", "char *" ] ]
   }).geo;
 }
 
-Geoclient.prototype.address = geocodeFn("1B", [ "houseNumber", "street", "zip", "borough", "name" ]);
+Geosupport.prototype.address = geocodeFn("1B", [ "houseNumber", "street", "zip", "borough", "name" ]);
 
-Geoclient.prototype.bbl = geocodeFn("BL", [ "borough", "block", "lot" ]);
+Geosupport.prototype.bbl = geocodeFn("BL", [ "borough", "block", "lot" ]);
 
-Geoclient.prototype.bin = geocodeFn("BN", [ "bin" ]);
+Geosupport.prototype.bin = geocodeFn("BN", [ "bin" ]);
 
-Geoclient.prototype.blockface = geocodeFn("3", [ "onStreet", "crossStreetOne", "crossStreetTwo", "borough", "boroughCrossStreetOne", "boroughCrossStreetTwo", "compassDirection" ]);
+Geosupport.prototype.blockface = geocodeFn("3", [ "onStreet", "crossStreetOne", "crossStreetTwo", "borough", "boroughCrossStreetOne", "boroughCrossStreetTwo", "compassDirection" ]);
 
-Geoclient.prototype.intersection = geocodeFn("2", [ "crossStreetOne", "crossStreetTwo", "borough", "boroughCrossStreetTwo", "compassDirection" ]);
+Geosupport.prototype.intersection = geocodeFn("2", [ "crossStreetOne", "crossStreetTwo", "borough", "boroughCrossStreetTwo", "compassDirection" ]);
 
-Geoclient.prototype.place = Geoclient.prototype.address;
+Geosupport.prototype.place = Geosupport.prototype.address;
 
-module.exports = Geoclient;
+module.exports = Geosupport;
 
 function geocodeFn(functionCode, allowedFields) {
 

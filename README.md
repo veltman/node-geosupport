@@ -1,6 +1,6 @@
 **Note: this is a skeleton for a future library, it doesn't work yet! In the meantime, consult [this Gist](https://gist.github.com/veltman/2c79458b2226466920dbd601bf94551f)**
 
-# Geoclient
+# Geosupport
 
 Future Node.js wrapper for fast geocoding with NYC's [Geosupport system](https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-gde-home.page).
 
@@ -49,9 +49,9 @@ TK, if this is possible w/ Linux libs
 In order to use the module, you must supply the path to `libgeo.so` (Linux) or `libgeo.dll` (Windows) when creating a new geocoder. It can be an absolute path or relative to the working directory.
 
 ```js
-var Geoclient = require("geoclient");
+var Geosupport = require("geosupport");
 
-var geocoder = new Geoclient("version-16c_16.3/lib/libgeo.so");
+var geocoder = new Geosupport("version-16c_16.3/lib/libgeo.so");
 ```
 
 ## API
